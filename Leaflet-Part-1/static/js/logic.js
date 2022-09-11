@@ -221,10 +221,9 @@ L.geoJson(data, {
 
   // style: styleInfo,
 
-  onEachFeature: function (feature, layer) 
-  }).addTo(tectonicplates);
-
-})
+  onEachFeature: function (feature, layer) {
+  }
+}).addTo(tectonicplates);
 
 
 
@@ -262,34 +261,33 @@ legend.addTo(myMap);
 
 
 
-//     function onEachFeature(feature, layer) {
-//       layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>${new Date(feature.properties.time)}</p>`);
-//     }
+    function onEachFeature(feature, layer) {
+      layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>${new Date(feature.properties.time)}</p>`);
+    }
   
-//   function createFeatures(earthquakeData) {
+  function createFeatures(earthquakeData) {
   
-//     // Define a function that we want to run once for each feature in the features array.
-//     // Give each feature a popup that describes the place and time of the earthquake.
+    // Define a function that we want to run once for each feature in the features array.
+    // Give each feature a popup that describes the place and time of the earthquake.
 
   
-//     // Create a GeoJSON layer that contains the features array on the earthquakeData object.
-//     // Run the onEachFeature function once for each piece of data in the array.
-//     var earthquakes = L.geoJSON(earthquakeData, {
-//       onEachFeature: onEachFeature
-//     });
+    // Create a GeoJSON layer that contains the features array on the earthquakeData object.
+    // Run the onEachFeature function once for each piece of data in the array.
+    var earthquakes = L.geoJSON(earthquakeData, {
+      onEachFeature: onEachFeature
+    });
   
-//     // Send our earthquakes layer to the createMap function/
-//     createMap(earthquakes);
-//   }
-//     // Create our map, giving it the streetmap and earthquakes layers to display on load.
-//     var myMap = L.map("map", {
-//       center: [
-//         37.09, -95.71
-//       ],
-//       zoom: 5,
-//       layers: [street, earthquakes]
-//     });
-  
+    // Send our earthquakes layer to the createMap function/
+    createMap(earthquakes);
+  }
+    // Create our map, giving it the streetmap and earthquakes layers to display on load.
+    var myMap = L.map("map", {
+      center: [
+        37.09, -95.71
+      ],
+      zoom: 5,
+      layers: [street, earthquakes]
+    });
+  }
 
-//   }
-
+    )
